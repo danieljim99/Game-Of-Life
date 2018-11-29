@@ -28,8 +28,11 @@ public class Ui {
 		do {
 			for(int i = 0; i < 9; i++) {
 				for(int j = 0; j < 9; j++) {
-					CellMesh.die(i, j);
-					CellMesh.born(i, j);
+					if(CellMesh.mesh[i][j].getAlive()) {
+						CellMesh.die(i, j);
+					} else {
+						CellMesh.born(i, j);
+					}
 				}
 			}
 			showMesh(CellMesh.mesh);
